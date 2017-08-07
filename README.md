@@ -1,6 +1,6 @@
 # Dotfiles
 
-My OSX / Ubuntu dotfiles.
+Ubuntu dotfiles.
 
 ## About this project
 
@@ -44,14 +44,6 @@ Any file in the `/link` subdirectory gets symlinked into `~/` with `ln -s`. Edit
 ### The "init" step
 Scripts in the `/init` subdirectory will be executed. A whole bunch of things will be installed, but _only_ if they aren't already.
 
-#### OS X
-
-* Minor XCode init via the [init/10_osx_xcode.sh](init/10_osx_xcode.sh) script
-* Homebrew via the [init/20_osx_homebrew.sh](init/20_osx_homebrew.sh) script
-* Homebrew recipes via the [init/30_osx_homebrew_recipes.sh](init/30_osx_homebrew_recipes.sh) script
-* Homebrew casks via the [init/30_osx_homebrew_casks.sh](init/30_osx_homebrew_casks.sh) script
-* [Fonts](/cowboy/dotfiles/tree/master/conf/osx/fonts) via the [init/50_osx_fonts.sh](init/50_osx_fonts.sh) script
-
 #### Ubuntu
 * APT packages and git-extras via the [init/20_ubuntu_apt.sh](init/20_ubuntu_apt.sh) script
 
@@ -70,15 +62,8 @@ Also, before installing, be sure to [read my gently-worded note](#heed-this-crit
 
 ## Installation
 
-### OS X Notes
 
-You need to have [XCode](https://developer.apple.com/downloads/index.action?=xcode) or, at the very minimum, the [XCode Command Line Tools](https://developer.apple.com/downloads/index.action?=command%20line%20tools), which are available as a much smaller download.
-
-The easiest way to install the XCode Command Line Tools in OSX 10.9+ is to open up a terminal, type `xcode-select --install` and [follow the prompts](http://osxdaily.com/2014/02/12/install-command-line-tools-mac-os-x/).
-
-_Tested in OSX 10.10_
-
-### Ubuntu Notes
+### Notes
 
 You might want to set up your ubuntu server [like I do it](https://github.com/cowboy/dotfiles/wiki/ubuntu-setup), but then again, you might not.
 
@@ -106,17 +91,6 @@ export DOTFILES_GH_BRANCH=master
 bash -c "$(wget -qO- https://raw.github.com/$DOTFILES_GH_USER/dotfiles/$DOTFILES_GH_BRANCH/bin/dotfiles)" && source ~/.bashrc
 ```
 
-#### macOS
-
-```sh
-export DOTFILES_GH_USER=cowboy
-export DOTFILES_GH_BRANCH=master
-bash -c "$(curl -fsSL https://raw.github.com/$DOTFILES_GH_USER/dotfiles/$DOTFILES_GH_BRANCH/bin/dotfiles)" && source ~/.bashrc
-```
-
-Since you'll be using the [dotfiles][dotfiles] command on subsequent runs, you'll only have to set the `DOTFILES_GH_USER` variable for the initial install, but if you have a custom branch, you _will_ need to export `DOTFILES_GH_BRANCH` for subsequent runs.
-
-There's a lot of stuff that requires admin access via `sudo`, so be warned that you might need to enter your password here or there.
 
 ### Actual installation (for me)
 
@@ -124,12 +98,6 @@ There's a lot of stuff that requires admin access via `sudo`, so be warned that 
 
 ```sh
 bash -c "$(wget -qO- https://bit.ly/cowboy-dotfiles)" && source ~/.bashrc
-```
-
-#### macOS
-
-```sh
-bash -c "$(curl -fsSL https://bit.ly/cowboy-dotfiles)" && source ~/.bashrc
 ```
 
 ## Aliases and Functions
@@ -156,9 +124,6 @@ SVN repos display as **[rev1:rev2]** where rev1 and rev2 are:
 **rev1** last changed revision  
 **rev2** revision
 
-Check it out:
-
-![My awesome bash prompt](http://farm8.staticflickr.com/7142/6754488927_563dd73553_b.jpg)
 
 ## Inspiration
 <https://github.com/gf3/dotfiles>  
