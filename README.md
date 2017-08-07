@@ -52,13 +52,6 @@ Scripts in the `/init` subdirectory will be executed. A whole bunch of things wi
 * Ruby, gems and rbenv via the [init/50_ruby.sh](init/50_ruby.sh) script
 * Vim plugins via the [init/50_vim.sh](init/50_vim.sh) script
 
-## Hacking my dotfiles
-
-Because the [dotfiles][dotfiles] script is completely self-contained, you should be able to delete everything else from your dotfiles repo fork, and it will still work. The only thing it really cares about are the `/copy`, `/link` and `/init` subdirectories, which will be ignored if they are empty or don't exist.
-
-If you modify things and notice a bug or an improvement, [file an issue](https://github.com/cowboy/dotfiles/issues) or [a pull request](https://github.com/cowboy/dotfiles/pulls) and let me know.
-
-Also, before installing, be sure to [read my gently-worded note](#heed-this-critically-important-warning-before-you-install).
 
 ## Installation
 
@@ -69,7 +62,7 @@ You might want to set up your ubuntu server [like I do it](https://github.com/co
 
 Either way, you should at least update/upgrade APT with `sudo apt-get -qq update && sudo apt-get -qq dist-upgrade` first.
 
-_Tested in Ubuntu 14.04 LTS_
+_Tested in Ubuntu 16.04 LTS_
 
 ### Heed this critically important warning before you install
 
@@ -77,7 +70,7 @@ _Tested in Ubuntu 14.04 LTS_
 
 Why? Because I often completely break this repo while updating. Which means that if I do that and you run the `dotfiles` command, your home directory will burst into flames, and you'll have to go buy a new computer. No, not really, but it will be very messy.
 
-### Actual installation (for you)
+### Actual installation 
 
 1. [Read my gently-worded note](#heed-this-critically-important-warning-before-you-install)
 1. Fork this repo
@@ -86,18 +79,9 @@ Why? Because I often completely break this repo while updating. Which means that
 #### Ubuntu
 
 ```sh
-export DOTFILES_GH_USER=cowboy
+export DOTFILES_GH_USER=rupshabagchi
 export DOTFILES_GH_BRANCH=master
 bash -c "$(wget -qO- https://raw.github.com/$DOTFILES_GH_USER/dotfiles/$DOTFILES_GH_BRANCH/bin/dotfiles)" && source ~/.bashrc
-```
-
-
-### Actual installation (for me)
-
-#### Ubuntu
-
-```sh
-bash -c "$(wget -qO- https://bit.ly/cowboy-dotfiles)" && source ~/.bashrc
 ```
 
 ## Aliases and Functions
@@ -123,14 +107,3 @@ SVN repos display as **[rev1:rev2]** where rev1 and rev2 are:
 
 **rev1** last changed revision  
 **rev2** revision
-
-
-## Inspiration
-<https://github.com/gf3/dotfiles>  
-<https://github.com/mathiasbynens/dotfiles>  
-(and 15+ years of accumulated crap)
-
-## License
-Copyright (c) 2014 "Cowboy" Ben Alman  
-Licensed under the MIT license.  
-<http://benalman.com/about/license/>
